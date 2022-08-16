@@ -1,14 +1,14 @@
 <div class="container">
   <div class="footer">
     <div class="footer-action">
-      <button>Đặt Phòng Ngay</button>
+      <button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
     </div>
     <div class="footer-nav">
       <div class="footer-nav-icon-home">
         <a href="/"><i class="fa fa-house-chimney"></i></a>
       </div>
       <div class="footer-nav-btn-chat">
-        <button>CHÁT <br/><span>ẨN DANH</span></button>
+        <button (click)="showChat()">CHÁT <br/><span>ẨN DANH</span></button>
       </div>
       <div class="footer-nav-line"></div>
       <div class="footer-nav-icon-call">
@@ -17,3 +17,19 @@
     </div>
   </div>
 </div>
+
+<ng-template #pickRoom>
+  <div class="col-12">
+    <form (ngSubmit)="pickRoom()" [formGroup]="formPickRoom">
+      <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4 text-center">Change Password</h6>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" formControlName="currentPassword">
+          <label>Current Password</label>
+        </div>
+        
+        <button [disabled]="!formChangePassword.valid" type="submit" class="btn btn-success mt-2">Kế tiếp</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
