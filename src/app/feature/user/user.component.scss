@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/open-sans');
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -10,6 +12,7 @@
   background-position: center;
   overflow: hidden;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
   .footer {
     position: absolute;
     bottom: 0px;
@@ -35,6 +38,7 @@
         font-weight: bold;
         text-align: center;
         line-height: 1.6;
+        font-family: 'Open Sans', sans-serif;
         cursor: pointer;
         &:hover {
           opacity: 0.8;
@@ -100,6 +104,7 @@
           height: 70px;
           font-size: 15px;
           font-weight: 700;
+          font-family: 'Open Sans', sans-serif;
           cursor: pointer;
           span {
             font-size: 10px;

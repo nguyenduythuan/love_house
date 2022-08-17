@@ -20,16 +20,22 @@
 
 <ng-template #pickRoom>
   <div class="col-12">
-    <form (ngSubmit)="pickRoom()" [formGroup]="formPickRoom">
+    <form (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
       <div class="bg-secondary rounded h-100 p-4">
-        <h6 class="mb-4 text-center">Change Password</h6>
+        <h6 class="mb-4 text-center">Đặt Phòng</h6>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" formControlName="currentPassword">
-          <label>Current Password</label>
+          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Ngày nhận phòng">
         </div>
-        
-        <button [disabled]="!formChangePassword.valid" type="submit" class="btn btn-success mt-2">Kế tiếp</button>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Giờ nhận phòng">
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Giờ trả phòng">
+        </div>
+        <button [disabled]="!formPickRoom.valid" type="submit" class="btn btn-success mt-2">Kế tiếp</button>
       </div>
     </form>
   </div>
 </ng-template>
+
+<!-- color: rgb(199, 22, 111); -->

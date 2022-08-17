@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.formPickRoom = this.fb.group({
-      
+
     });
   }
 
@@ -33,6 +33,6 @@ export class UserComponent implements OnInit {
   pickRoom() {
     console.log('run');
   }
-  
+
 
 }
