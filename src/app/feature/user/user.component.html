@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="footer">
     <div class="footer-action">
       <button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
@@ -16,10 +16,10 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> -->
+<button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
 <ng-template #pickRoom>
-  <div class="col-12">
+  <div class="col-12 content-popup">
     <form (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
       <div class="bg-secondary rounded h-100 p-4">
         <h6 class="mb-4 text-center">Đặt Phòng</h6>
