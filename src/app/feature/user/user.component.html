@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
   <div class="footer">
     <div class="footer-action">
       <button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
@@ -16,24 +16,48 @@
       </div>
     </div>
   </div>
-</div> -->
-<button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
+</div>
+
 <ng-template #pickRoom>
   <div class="col-12 content-popup">
-    <form (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
-      <div class="bg-secondary rounded h-100 p-4">
-        <h6 class="mb-4 text-center">Đặt Phòng</h6>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Ngày nhận phòng">
+    <form class="form-booking" (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
+      <div class="ladi-box">
+        <div class="ladi-box__left"></div>
+        <div class="content-popup-head">
+          <div class="ladi-headline">ĐẶT PHÒNG</div>
         </div>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Giờ nhận phòng">
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" formControlName="currentPassword" placeholder="Giờ trả phòng">
-        </div>
-        <button [disabled]="!formPickRoom.valid" type="submit" class="btn btn-success mt-2">Kế tiếp</button>
+        <div></div>
       </div>
+      <div class="ladi-box">
+        <div></div>
+        <div class="ladi-box__center">
+          <input type="text" autofocus placeholder="Ngày nhận phòng" formControlName="dateCheckIn" >
+        </div>
+        <div class="ladi-box__right"></div>
+      </div>
+      <div class="ladi-box">
+        <div class="ladi-box__left"></div>
+        <div class="ladi-box__center">
+          <input type="text" placeholder="Giờ nhận phòng" formControlName="timeCheckIn">
+        </div>
+        <div></div>
+      </div>
+      <div class="ladi-box">
+        <div></div>
+        <div class="ladi-box__center">
+          <input type="text" placeholder="Giờ trả phòng" formControlName="timeCheckOut">
+        </div>
+        <div class="ladi-box__right"></div>
+      </div>
+      <div class="ladi-box">
+        <div class="ladi-box__left"></div>
+        <div class="ladi-box__center">
+          <button (click)="nexStept()" class="ladi-bottom">KẾ TIẾP</button>
+        </div>
+        <div></div>
+      </div>
+      <div class="text-day">{{dateNow}}</div>
+      <button (click)="hideModal()" class="closePopup">X</button>
     </form>
   </div>
 </ng-template>
