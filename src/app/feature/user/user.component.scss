@@ -231,7 +231,7 @@ $bg-color-pink: rgb(199, 22, 111);
       font-size: 14px;
       font-weight: bold;
       text-align: center;
-      line-height: 1.6;    
+      line-height: 1.6;
       background-color: rgba(255, 255, 255, 0);
       border: none;
       outline: none;
@@ -264,17 +264,17 @@ $bg-color-pink: rgb(199, 22, 111);
       color: $bg-color-pink;
       opacity: 0.8; /* Firefox */
     }
-    
+
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
       color: $bg-color-pink;
-      opacity: 0.8; 
+      opacity: 0.8;
     }
-    
+
     ::-ms-input-placeholder { /* Microsoft Edge */
       color: $bg-color-pink;
-      opacity: 0.8; 
+      opacity: 0.8;
     }
-    
+
   }
 
   .text-day {
@@ -298,7 +298,7 @@ $bg-color-pink: rgb(199, 22, 111);
     font-size: 20px;
     background-color: transparent;
   }
-  
+
   @media screen and (max-width: 420px) {
     & {
       width: calc(100vw - 20px);

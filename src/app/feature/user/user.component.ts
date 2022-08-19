@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import * as dayjs from 'dayjs'
@@ -15,7 +15,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     public modalService: BsModalService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private ElByClassName: ElementRef
   ) {
     this.formPickRoom = this.fb.group({
       dateCheckIn: ['', [Validators.required]],
@@ -32,7 +33,7 @@ export class UserComponent implements OnInit {
   }
 
   showModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered' });
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered animation-show' });
   }
 
   pickRoom() {
@@ -44,7 +45,9 @@ export class UserComponent implements OnInit {
   }
 
   hideModal(): void {
-    this.modalRef.hide();
+    const div = document.getElementsByClassName("modal-dialog-centered") as HTMLCollectionOf<HTMLElement>;
+    div[0].className = "modal-dialog modal-dialog-centered animation-disappear";
+    //this.modalRef.hide();
   }
 
 
