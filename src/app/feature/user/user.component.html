@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="container-logo">
+    <img src="logo.png" alt="logo">
+  </div>
   <div class="footer">
     <div class="footer-action">
       <button (click)="showModal(pickRoom)">Đặt Phòng Ngay</button>
@@ -52,7 +55,7 @@
       <div class="ladi-box">
         <div class="ladi-box__left"></div>
         <div class="ladi-box__center">
-          <button (click)="nexStept()" class="ladi-bottom">KẾ TIẾP</button>
+          <button (click)="onChooseRoom()" class="ladi-bottom">KẾ TIẾP</button>
         </div>
         <div></div>
       </div>
@@ -61,5 +64,7 @@
     </form>
   </div>
 </ng-template>
+
+<router-outlet></router-outlet>
 
 <!-- color: rgb(199, 22, 111); -->

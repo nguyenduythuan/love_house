@@ -1,0 +1,29 @@
+<div class="list-room">
+  <div class="list-room-header">
+    <button (click)="backToHome()" class="btn fa fa-arrow-left"></button>
+    <h3>DANH SÁCH PHÒNG</h3>
+  </div>
+  <div class="list-room-container">
+    <div *ngFor="let room of rooms" class="list-room-card">
+      <div class="list-room-card-content">
+        <div class="list-room-card-img">
+          <img src="{{room.images[0].url}}" alt="">
+        </div>
+        <div class="list-room-card-info">
+          <div>
+            <h5>{{room.name_room}}</h5>
+          </div>
+          <div>
+            <p>{{room.description}}</p>
+          </div>
+          <div>
+            Giá 1h: {{room.price}}<small>VNĐ</small>
+          </div>
+          <div class="btn-detail">
+            <button class="btn"><i class="fa fa-camera"></i> Xem hình ảnh</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

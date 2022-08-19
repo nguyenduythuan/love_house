@@ -1,7 +1,9 @@
 import { Component, OnInit, TemplateRef, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import * as dayjs from 'dayjs'
+import * as dayjs from 'dayjs';
+
+import { Room } from '../../core/models/room.model';
 
 @Component({
   selector: 'app-user',
@@ -36,19 +38,13 @@ export class UserComponent implements OnInit {
     this.modalRef = this.modalService.show(template, { class: 'modal-dialog-centered animation-show' });
   }
 
-  pickRoom() {
-    console.log('run');
-  }
-
-  nexStept() {
-
+  onChooseRoom() {
+    this.modalRef.hide();
+    window.location.href = '/list-room';
   }
 
   hideModal(): void {
-    const div = document.getElementsByClassName("modal-dialog-centered") as HTMLCollectionOf<HTMLElement>;
-    div[0].className = "modal-dialog modal-dialog-centered animation-disappear";
-    //this.modalRef.hide();
+    this.modalRef.setClass('modal-dialog modal-dialog-centered animation-disappear');
+    this.modalRef.hide();
   }
-
-
 }
