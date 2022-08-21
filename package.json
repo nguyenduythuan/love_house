@@ -3,22 +3,27 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/datetime-picker": "^8.0.0",
     "@angular/animations": "^14.1.0",
+    "@angular/cdk": "14.1.3",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.1.0",
     "@angular/forms": "^14.1.0",
+    "@angular/material": "14.1.3",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "bootstrap": "^5.2.0",
     "dayjs": "^1.11.5",
+    "ng-image-slider": "^6.0.0",
     "ngx-bootstrap": "^9.0.0",
     "ngx-toastr": "^15.0.0",
     "rxjs": "~7.5.0",
@@ -37,5 +42,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.7.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/nguyenduythuan/love_house.git",
+  "author": "thuanduy <thuanduy73h1@gmail.com>",
+  "license": "MIT"
 }

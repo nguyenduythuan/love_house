@@ -3,6 +3,9 @@ $bg-pink-white: rgb(255, 233, 244);
 
 .list-room {
   position: relative;
+  max-width: 576px;
+  margin-left: auto;
+  margin-right: auto;
   .btn {
     outline: none;
     background-color: transparent;
@@ -20,6 +23,7 @@ $bg-pink-white: rgb(255, 233, 244);
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $bg-color-pink;
+    z-index: 4;
     button {
       font-size: 24px;
       margin-left: 15px;
@@ -36,35 +40,83 @@ $bg-pink-white: rgb(255, 233, 244);
   }
   .list-room-container {
     padding-top: 50px;
+    padding-bottom: 2px;
     .list-room-card {
-      margin: 10px;
-      height: calc((95vh - 60px) / 4 );
+      margin-bottom: 10px;
+      height: calc((100vh - 100px) / 4 );
       .list-room-card-content {
         width: 100%;
         height: 100%;
         display: flex;
-        border-radius: 15px;
         overflow: hidden;
-        background-color: $bg-pink-white;
+        background-color: #fff;
+        padding: 10px;
         .list-room-card-img {
-          width: 60%;
+          width: 45vw;
           height: 100%;
+          position: relative;
           img {
             width: 100%;
             height: 100%;
           }
-        }
-      }
-      .list-room-card-info {
-        margin-left: 10px;
-        .btn-detail {
           button {
-            cursor: pointer;
-            &:hover {
-              text-decoration: underline;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.5;
+          }
+          &:hover button, &:active button {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.24);
+          }
+        }
+        .list-room-card-info {
+          padding-left: 10px;
+          width: 55vw;
+          .btn-detail {
+            button {
+              background-color: $bg-color-pink;
+              color: #fff;
+              border-radius: 5px;
+              padding: 3px 5px;
+              font-size: 11px;
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+          .list-room-card-info__title {
+            font-size: 14px;
+            font-weight: 600;
+            padding-bottom: 5px;
+          }
+          .list-room-card-info__txt p {
+            font-size: 11px;
+            margin-bottom: 5px;
+          }
+          .list-room-card-info__price {
+            font-size: 13px;
+            span {
+              color: rgb(255, 83, 40);
             }
           }
         }
+      }
+      &:nth-child(1) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 321px){
+  .list-room {
+    .list-room-container {
+      .list-room-card {
+        height: calc((100vh - 89px) / 3);
       }
     }
   }

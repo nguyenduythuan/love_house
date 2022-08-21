@@ -22,47 +22,56 @@
 </div>
 
 <ng-template #pickRoom>
-  <div class="col-12 content-popup">
-    <form class="form-booking" (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
-      <div class="ladi-box">
-        <div class="ladi-box__left"></div>
-        <div class="content-popup-head">
-          <div class="ladi-headline">ĐẶT PHÒNG</div>
-        </div>
-        <div></div>
+  <form class="form-booking" (ngSubmit)="pickRoom" [formGroup]="formPickRoom">
+    <div class="ladi-box">
+      <div class="ladi-box__left"></div>
+      <div class="content-popup-head">
+        <div class="ladi-headline">ĐẶT PHÒNG</div>
       </div>
-      <div class="ladi-box">
-        <div></div>
-        <div class="ladi-box__center">
-          <input type="text" autofocus placeholder="Ngày nhận phòng" formControlName="dateCheckIn" >
-        </div>
-        <div class="ladi-box__right"></div>
+      <div></div>
+    </div>
+    <div class="ladi-box">
+      <div></div>
+      <div class="ladi-box__center">
+        <mat-form-field>
+          <mat-label class="color-pink">Tên khách hàng</mat-label>
+          <input type="text" formControlName="fullName" matInput >
+        </mat-form-field>
       </div>
-      <div class="ladi-box">
-        <div class="ladi-box__left"></div>
-        <div class="ladi-box__center">
-          <input type="text" placeholder="Giờ nhận phòng" formControlName="timeCheckIn">
-        </div>
-        <div></div>
+      <div class="ladi-box__right"></div>
+    </div>
+    <div class="ladi-box">
+      <div class="ladi-box__left"></div>
+      <div class="ladi-box__center">
+        <mat-form-field>
+          <mat-label>Ngày nhận phòng</mat-label>
+          <input readonly matInput (click)="picker.open()" [ngxMatDatetimePicker]="picker" formControlName="timeCheckIn">
+          <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+        </mat-form-field>
       </div>
-      <div class="ladi-box">
-        <div></div>
-        <div class="ladi-box__center">
-          <input type="text" placeholder="Giờ trả phòng" formControlName="timeCheckOut">
-        </div>
-        <div class="ladi-box__right"></div>
+      <div></div>
+    </div>
+    <div class="ladi-box">
+      <div></div>
+      <div class="ladi-box__center">
+        <mat-form-field>
+          <mat-label>Ngày trả phòng</mat-label>
+          <input readonly matInput (click)="picker2.open()" [ngxMatDatetimePicker]="picker2" formControlName="timeCheckOut">
+          <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
+        </mat-form-field>
       </div>
-      <div class="ladi-box">
-        <div class="ladi-box__left"></div>
-        <div class="ladi-box__center">
-          <button (click)="onChooseRoom()" class="ladi-bottom">KẾ TIẾP</button>
-        </div>
-        <div></div>
+      <div class="ladi-box__right"></div>
+    </div>
+    <div class="ladi-box">
+      <div class="ladi-box__left"></div>
+      <div class="ladi-box__center">
+        <button (click)="onChooseRoom()" class="ladi-bottom">KẾ TIẾP</button>
       </div>
-      <div class="text-day">{{dateNow}}</div>
-      <button (click)="hideModal()" class="closePopup">X</button>
-    </form>
-  </div>
+      <div></div>
+    </div>
+    <div class="text-day">{{dateNow}}</div>
+    <button (click)="hideModal()" class="closePopup">X</button>
+  </form>
 </ng-template>
 
 <router-outlet></router-outlet>

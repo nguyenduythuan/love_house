@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ElementRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import * as dayjs from 'dayjs';
@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
     private ElByClassName: ElementRef
   ) {
     this.formPickRoom = this.fb.group({
-      dateCheckIn: ['', [Validators.required]],
+      fullName: ['', [Validators.required]],
       timeCheckIn: ['', [Validators.required]],
       timeCheckOut: ['', [Validators.required]]
     });
@@ -47,4 +47,8 @@ export class UserComponent implements OnInit {
     this.modalRef.setClass('modal-dialog modal-dialog-centered animation-disappear');
     this.modalRef.hide();
   }
+
+  onForCus(): void {
+  }
+
 }

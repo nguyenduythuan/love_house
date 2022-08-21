@@ -1,6 +1,6 @@
 <div class="list-room">
   <div class="list-room-header">
-    <button (click)="backToHome()" class="btn fa fa-arrow-left"></button>
+    <button (click)="backToHome()" class="btn"><i class="fa fa-arrow-left"></i></button>
     <h3>DANH SÁCH PHÒNG</h3>
   </div>
   <div class="list-room-container">
@@ -8,22 +8,31 @@
       <div class="list-room-card-content">
         <div class="list-room-card-img">
           <img src="{{room.images[0].url}}" alt="">
+          <button class="btn" (click)="viewImageRoom(room.images, roomDetail)" ><i class="fa fa-eye"></i></button>
         </div>
         <div class="list-room-card-info">
-          <div>
-            <h5>{{room.name_room}}</h5>
+          <div class="list-room-card-info__title">
+            {{room.name_room}}
           </div>
-          <div>
+          <div class="list-room-card-info__txt">
             <p>{{room.description}}</p>
           </div>
-          <div>
-            Giá 1h: {{room.price}}<small>VNĐ</small>
+          <div class="list-room-card-info__price">
+            Giá 1h: <span>{{room.price}}<small>VNĐ</small></span>
           </div>
           <div class="btn-detail">
-            <button class="btn"><i class="fa fa-camera"></i> Xem hình ảnh</button>
+            <button (click)="chooseRoom(room.id, payment)" class="btn">Chọn Phòng</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #roomDetail>
+  <app-room [images]="imagesObject"></app-room>
+</ng-template>
+
+<ng-template #payment>
+  <app-payment></app-payment>
+</ng-template>

@@ -1,7 +1,9 @@
 @import url('http://fonts.cdnfonts.com/css/open-sans');
 $bg-color-pink: rgb(199, 22, 111);
 $bg-pink-white: rgb(255, 233, 244);
-$bg-black: rgba(0, 0, 0, 0.55);
+$bg-black-tran: rgba(0, 0, 0, 0.55);
+$bg-black: #000000;
+
 
 * {
   box-sizing: border-box;
@@ -16,7 +18,16 @@ html, body {
   height: 0px;
   width: 100%;
   height: 100%;
-  background-color: $bg-black;
+  background-color: $bg-black !important;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+p {
+  line-height: 1.2;
 }
 
 .modal-dialog-centered {
@@ -25,7 +36,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $bg-black;
+  background-color: $bg-black-tran;
   position: absolute;
   top: 0;
   left: 0;
@@ -51,4 +62,244 @@ html, body {
 @keyframes disappear {
   0%   {height: 100vh;}
   100% {height: 0vh; opacity: 0}
+}
+
+.modal-backdrop.show {
+  opacity: 0 !important;
+}
+
+.modal-dialog {
+  max-width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+.modal-dialog-centered .modal-content {
+  background-color: $bg-pink-white !important;
+  border: 1px solid $bg-color-pink !important;
+  border-top-left-radius: 99px !important;
+  border-bottom-right-radius: 99px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  width: 400px !important;
+  position: relative;
+
+  .ladi-box {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    div:nth-child(1) {
+      width: 40%;
+    }
+    div:nth-child(2) {
+      width: 100%;
+    }
+    div:nth-child(3) {
+      width: 40%;
+    }
+
+    .content-popup-head {
+      text-align: center;
+      flex-grow: 1 !important;
+      width: 100%;
+      .ladi-headline {
+        width: 100%;
+        height: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        color: rgb(199, 22, 111);
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.6;
+        -webkit-text-stroke-width: 0px;
+        border-style: solid;
+        border-color: rgb(199, 22, 111);
+        border-width: 0px 2px 1px;
+        border-radius: 50px;
+        transform: translateY(-50%);
+        padding-top: 10px;
+      }
+    }
+
+    .ladi-box__left {
+      background-color: rgba(255, 255, 255, 0);
+      border-left-style: solid;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-color: $bg-color-pink;
+      border-width: 1px 0px 1px 1px;
+      border-radius: 45px 0px 0px 45px;
+      height: 51px;
+    }
+    .ladi-box__center {
+      border-top: 1px;
+      border-style: solid;
+      border-bottom: 1px;
+      border-color: $bg-color-pink;
+      border-left: none !important;
+      border-right: none !important;
+      text-align: center;
+      padding-top: 5px;
+    }
+    .ladi-box__right {
+      border-left: none !important;
+      background-color: rgba(255, 255, 255, 0);
+      border-style: solid;
+      border-color: $bg-color-pink;
+      border-width: 1px 1px 1px 0px;
+      border-radius: 0px 45px 45px 0px;
+      height: 51px;
+    }
+
+    .ladi-bottom {
+      color: $bg-color-pink;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.6;
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border-style: solid;
+      border-color: $bg-color-pink;
+      border-width: 0px 2px;
+      border-radius: 50px;
+      transform: translateY(50%);
+      cursor: pointer;
+      &:hover {
+        background-color: $bg-color-pink;
+        color: #fff;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      background-color: transparent;
+      font-size: 14px;
+      color: $bg-color-pink;
+      padding-left: 10px;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $bg-color-pink;
+      opacity: 0.8; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $bg-color-pink;
+      opacity: 0.8;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: $bg-color-pink;
+      opacity: 0.8;
+    }
+
+  }
+
+  .text-day {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $bg-color-pink;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .closePopup {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    color: $bg-color-pink;
+    outline: none;
+    font-size: 20px;
+    background-color: transparent;
+  }
+
+  @media screen and (max-width: 420px) {
+    & {
+      width: calc(100vw - 20px) !important;
+    }
+  }
+
+  @media screen and (max-width: 321px) {
+    & {
+      padding: 30px 15px !important;
+    }
+  }
+}
+
+mat-form-field {
+  height: 100%;
+}
+
+mat-form-field div {
+  width: 100% !important;
+}
+
+.mat-form-field-underline.ng-star-inserted {
+  height: 0px !important;
+}
+
+.mat-form-field-underline.ng-star-inserted {
+  height: 0px !important;
+}
+
+.mat-form-field-hint-spacer {
+  height: 0px !important;
+}
+
+span.mat-form-field-ripple {
+  height: 0px !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: $bg-color-pink;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $bg-color-pink;
+}
+
+mat-form-field-wrappe {
+  height: 100%;
+  padding: 0px !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  height: 100%;
+}
+
+.cdk-overlay-container  {
+  z-index: 2000;
+}
+
+.modal-dialog-center {
+  padding-top: 30vh !important;
+  background-color: #00000083;
+}
+
+.modal-dialog-center .modal-content {
+  padding: 10px 9px 4px 6px;
+  width: 400px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e0dfdf;
+  @media screen and (max-width: 420px) {
+    & {
+      width: calc(100vw - 20px) !important;
+    }
+  }
 }
