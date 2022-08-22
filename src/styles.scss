@@ -245,7 +245,7 @@ mat-form-field {
   height: 100%;
 }
 
-mat-form-field div {
+.form-booking mat-form-field div {
   width: 100% !important;
 }
 
@@ -288,11 +288,29 @@ mat-form-field-wrappe {
 
 .modal-dialog-center {
   padding-top: 30vh !important;
-  background-color: #00000083;
+  background-color: #000000c7;
 }
 
 .modal-dialog-center .modal-content {
   padding: 10px 9px 4px 6px;
+  width: 400px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e0dfdf;
+  @media screen and (max-width: 420px) {
+    & {
+      width: calc(100vw - 20px) !important;
+    }
+  }
+}
+
+.modal-dialog-pick-room {
+  padding-top: 10vh !important;
+  background-color: #000000c7;
+}
+
+.modal-dialog-pick-room .modal-content {
+  padding: 10px;
   width: 400px !important;
   margin-left: auto;
   margin-right: auto;

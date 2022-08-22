@@ -180,7 +180,7 @@ export class RoomsComponent implements OnInit {
   chooseRoom(id: Number, template: TemplateRef<any>):void {
     console.log(id);
     this.pickRoom = id;
-    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-center' });
+    this.modalRef = this.modalService.show(template, { class: 'modal-dialog-pick-room' });
   }
 
 }

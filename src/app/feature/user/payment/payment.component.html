@@ -1,15 +1,32 @@
 <div class="paymnet">
-  <div class="paymet-title">
-    <h3>
-      Xác nhận thông tin và thanh toán
-    </h3>
+  <div class="paymnet-title">
+    <h3>Thông tin đặt phòng</h3>
   </div>
-  <div>
-    <form>
-      <mat-form-field class="example-full-width"  appearance="fill">
-        <mat-label>Color</mat-label>
-        <input matInput formControlName="">
-      </mat-form-field>
-    </form>
-  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Tên khách hàng</mat-label>
+      <input matInput value="Nguyen van a">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Số điện thoại</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Thời gian <small class="smail-text">(1 giờ 30 phút)</small></mat-label>
+      <input readonly matInput value="10/08/22 15:30 đến 10/08/22 17:00">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Toppings</mat-label>
+      <mat-select [formControl]="toppings" multiple>
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="example-row">
+      <div class="example-row-price">
+        <p class="example-row-price__title">Tổng tiền thanh toán</p>
+        <p class="example-row-price__txt">{{totalPrice}}</p>
+      </div>
+      <button mat-raised-button color="primary">Đặt ngay</button>
+    </div>
+  </form>
 </div>

@@ -10,11 +10,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgImageSliderModule } from 'ng-image-slider';
+import {MatSelectModule} from '@angular/material/select';
 import {
   NgxMatDatetimePickerModule,
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from '@angular-material-components/datetime-picker';
+import {MatButtonModule} from '@angular/material/button';
 
 
 export const routes: Routes = [
@@ -61,7 +63,9 @@ export const routes: Routes = [
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [
     MatDatepickerModule
